@@ -1,0 +1,29 @@
+{
+  "author": "Dan Jenkins <dan.jenkins@holidayextras.com> (http://www.holidayextras.co.uk/)",
+  "name": "asterisk-ami",
+  "description": "An asterisk ami connector",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/holidayextras/node-asterisk-ami.git"
+  },
+  "main": "./index",
+  "scripts": {
+    "test": "make test"
+  },
+  "engine": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "utest": "0.0.3",
+    "urun": "0.0.4"
+  },
+  "keywords": [
+    "asterisk",
+    "ami"
+  ],
+  "engines": {
+    "node": "*"
+  }
+}
