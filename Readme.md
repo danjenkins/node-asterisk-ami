@@ -12,7 +12,7 @@ npm install asterisk-ami
 
 ```js
 var AsteriskAmi = require('asterisk-ami');
-var ami       = new AsteriskAmi();
+var ami         = new AsteriskAmi();
 
 //an example of use here
 
@@ -20,8 +20,10 @@ var ami       = new AsteriskAmi();
 
 AsteriskAmi has preset/configurable options, you can set these via an object passed in to AsteriskAmi
 
-* **optionName**: Info about configuration
-
+* **port**: Port number for Asterisk AMI, defaults to 5038
+* **host**: Host of Asterisk, defaults to localhost
+* **username**: Username of Asterisk AMI user, defaults to username
+* **password**: Password of Asterisk AMI user, defaults to password
 
 ## NPM Maintainers
 
