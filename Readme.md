@@ -1,6 +1,6 @@
 # asterisk-ami
 
-An Asterisk AMI connector
+An extremely lightweight Asterisk AMI connector
 
 ## Install
 
@@ -14,16 +14,28 @@ npm install asterisk-ami
 var AsteriskAmi = require('asterisk-ami');
 var ami         = new AsteriskAmi();
 
-//an example of use here
+ami.on('ami_data', function(data){
+	console.log(data);
+	/*data would look like this
+	{
+      Event : 'FullyBooted',
+      Priviledge : 'system,all',
+      Status : 'Fully Booted'
+    }
+    */
+});
+
+ami.send({action: 'login', username : 'username', secret : 'secret'});
+```
 
 ## Configuration options
 
 AsteriskAmi has preset/configurable options, you can set these via an object passed in to AsteriskAmi
 
-* **port**: Port number for Asterisk AMI, defaults to 5038
-* **host**: Host of Asterisk, defaults to localhost
-* **username**: Username of Asterisk AMI user, defaults to username
-* **password**: Password of Asterisk AMI user, defaults to password
+* **port**: Port number for Asterisk AMI, default `5038`
+* **host**: Host of Asterisk, default `localhost`
+* **username**: Username of Asterisk AMI user, default: `username`
+* **password**: Password of Asterisk AMI user, default: `password`
 
 ## NPM Maintainers
 
