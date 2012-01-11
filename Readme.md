@@ -11,7 +11,7 @@ npm install asterisk-ami
 ## Usage
 
 ```js
-var AsteriskAmi = require('./lib/AsteriskAmi');
+var AsteriskAmi = require('asterisk-ami');
 var ami = new AsteriskAmi( { host: 'hostname', username: 'username', password: 'secret' } );
 
 ami.on('ami_data', function(data){
