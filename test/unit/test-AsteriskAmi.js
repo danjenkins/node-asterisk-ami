@@ -5,13 +5,12 @@ var AsteriskAmi = require('../../lib/AsteriskAmi');
 test('AsteriskAmi#processData', {
   'converts asterisk ascii to object': function() {
     var ami = new AsteriskAmi();
-    var input = ami.processData(
-'Event: FullyBooted
+    var content = 'Event: FullyBooted
 Privilege: system,all
 Status: Fully Booted
 
-'
-);
+';
+    var input = ami.processData(content);
 
     var expected ={
       Event : 'FullyBooted',

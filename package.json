@@ -21,7 +21,8 @@
   },
   "keywords": [
     "asterisk",
-    "ami"
+    "ami",
+    "voip"
   ],
   "engines": {
     "node": "*"

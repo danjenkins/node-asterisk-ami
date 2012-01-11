@@ -11,21 +11,19 @@ npm install asterisk-ami
 ## Usage
 
 ```js
-var AsteriskAmi = require('asterisk-ami');
-var ami         = new AsteriskAmi();
+var AsteriskAmi = require('./lib/AsteriskAmi');
+var ami = new AsteriskAmi( { host: 'hostname', username: 'username', password: 'secret' } );
 
 ami.on('ami_data', function(data){
-	console.log(data);
-	/*data would look like this
-	{
-      Event : 'FullyBooted',
-      Priviledge : 'system,all',
-      Status : 'Fully Booted'
-    }
-    */
+	console.log('AMI DATA', data);
+	//decide between Events and non events here and what to do with them, maybe run an event emitter for the ones you care about
 });
 
-ami.send({action: 'login', username : 'username', secret : 'secret'});
+ami.connect(function(){
+	ami.send({action: 'Ping'});//run a callback event when we have connected to the socket
+});//connect creates a socket connection and sends the login action
+
+ami.send({action: 'Ping'});
 ```
 
 ## Configuration options
