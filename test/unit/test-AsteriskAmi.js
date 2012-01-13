@@ -5,17 +5,15 @@ var AsteriskAmi = require('../../lib/AsteriskAmi');
 test('AsteriskAmi#processData', {
   'converts asterisk ascii to object': function() {
     var ami = new AsteriskAmi();
-    var content = 'Event: FullyBooted
-Privilege: system,all
-Status: Fully Booted
+    var content = 'Event: FullyBooted' + ami.CRLF + 'Privilege: system,all' + ami.CRLF + 'Status: Fully Booted' + ami.END;
+    var input_arr = ami.processData(content);
 
-';
-    var input = ami.processData(content);
+    var input = input_arr[0];
 
     var expected ={
-      Event : 'FullyBooted',
-      Priviledge : 'system,all',
-      Status : 'Fully Booted'
+      event : 'FullyBooted',
+      privilege : 'system,all',
+      status : 'Fully Booted'
     };
 
     assert.deepEqual(input, expected);

@@ -2,6 +2,9 @@
 
 An extremely lightweight Asterisk AMI connector
 
+
+[![Build Status](https://secure.travis-ci.org/holidayextras/node-asterisk-ami.png)](http://travis-ci.org/holidayextras/node-asterisk-ami)
+
 ## Install
 
 ```
