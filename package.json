@@ -16,7 +16,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "utest": "0.0.3",
+    "utest": "0.0.3"
   },
   "scripts": {
     "test": "node test/unit/test-AsteriskAmi.js"
