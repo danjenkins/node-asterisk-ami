@@ -31,9 +31,10 @@ ami.send({action: 'Ping'});
 ##Events
 
 (AMI Data)
-* **ami_login**
-* **ami_data**
-* **ami_login**
+These give you AMI specific information
+
+* **ami_login** Called when logging into the ami, no data passed back
+* **ami_data** Called for each event we get back from the AMI, with an object being returned
 
 (net socket events)
 Use these events to determine the status of the socket connection, as if the socket is disconnected, you would need to add your .on('close') events again, this was a bug in the previous version of asterisk-ami, use these new events instead which will always be called, even if the connection has died and been reconnected.
