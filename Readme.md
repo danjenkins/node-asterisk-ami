@@ -2,7 +2,6 @@
 
 An extremely lightweight Asterisk AMI connector
 
-
 [![Build Status](https://secure.travis-ci.org/holidayextras/node-asterisk-ami.png)](http://travis-ci.org/holidayextras/node-asterisk-ami)
 
 ## Install
@@ -29,6 +28,39 @@ ami.connect(function(){
 ami.send({action: 'Ping'});
 ```
 
+##Events
+
+(AMI Data)
+* **ami_login**
+* **ami_data**
+* **ami_login**
+
+(net socket events)
+Use these events to determine the status of the socket connection, as if the socket is disconnected, you would need to add your .on('close') events again, this was a bug in the previous version of asterisk-ami, use these new events instead which will always be called, even if the connection has died and been reconnected.
+
+* **ami_socket_drain**
+* **ami_socket_error**
+* **ami_socket_timeout**
+* **ami_socket_end**
+* **ami_socket_close**
+* **ami_socket_unwritable**
+
+
+##methods
+
+```js
+.connect(function(){
+  console.log('connection to AMI socket successful');
+}, function(raw_data){
+  console.log('every time data comes back in the socket, this callback is called, useful for recording stats on data', raw_data);
+})
+
+.disconnect() //logs out of the AMI and then closes the connection, sets reconnect to false so that it wont try and reconnect
+
+.send({action: 'Ping'}) //send an ami call, pass in a javascript object with the params you want to send the ami
+```
+
+
 ## Configuration options
 
 AsteriskAmi has preset/configurable options, you can set these via an object passed in to AsteriskAmi
@@ -37,6 +69,9 @@ AsteriskAmi has preset/configurable options, you can set these via an object pas
 * **host**: Host of Asterisk, default `localhost`
 * **username**: Username of Asterisk AMI user, default: `username`
 * **password**: Password of Asterisk AMI user, default: `password`
+* **debug**: Do you want debugging output to the screen, default: `false`
+* **reconnect**: Do you want the ami to reconnect if the connection is dropped, default: `false`
+* **reconnect_after** How long to wait to reconnect, in miliseconds, default: `3000`
 
 ## NPM Maintainers
 
