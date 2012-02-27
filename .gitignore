@@ -1,3 +1,4 @@
 node_modules/*
 .DS_Store
 testConnection.js
+npm-debug.log

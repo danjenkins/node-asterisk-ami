@@ -59,6 +59,9 @@ Use these events to determine the status of the socket connection, as if the soc
 .disconnect() //logs out of the AMI and then closes the connection, sets reconnect to false so that it wont try and reconnect
 
 .send({action: 'Ping'}) //send an ami call, pass in a javascript object with the params you want to send the ami
+
+.destroy() //terminates the connection to the ami socket if say disconnect fails, or you've lost connection to the ami and you're not using reconnect: true as a param
+
 ```
 
 
