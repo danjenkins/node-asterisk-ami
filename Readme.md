@@ -76,6 +76,7 @@ AsteriskAmi has preset/configurable options, you can set these via an object pas
 * **debug**: Do you want debugging output to the screen, default: `false`
 * **reconnect**: Do you want the ami to reconnect if the connection is dropped, default: `false`
 * **reconnect_after** How long to wait to reconnect, in miliseconds, default: `3000`
+* **events** Do we want to recieve AMI events, default: `true`
 
 ## NPM Maintainers
 
