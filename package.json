@@ -2,7 +2,7 @@
   "author": "Dan Jenkins <dan.jenkins@holidayextras.com> (http://www.holidayextras.co.uk/)",
   "name": "asterisk-ami",
   "description": "An asterisk ami connector",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "git://github.com/holidayextras/node-asterisk-ami.git"
