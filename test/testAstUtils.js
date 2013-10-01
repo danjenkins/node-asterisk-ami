@@ -7,7 +7,7 @@ describe('astUtils', function(){
       assert.ok(astUtils.generateRandomActionID.call({identifier: 'foobar'}).substring(0,7) == 'foobar-');
     });
     it('should return a random id', function(){
-      assert.ok(astUtils.generateRandomActionID.call({identifier: null}).length instanceof Number);
+      assert.ok(typeof (astUtils.generateRandomActionID.call({identifier: null})/1) === 'number');
     });
   });
   describe('logoutAction', function(){
