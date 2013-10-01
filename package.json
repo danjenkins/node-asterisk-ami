@@ -9,7 +9,7 @@
   },
   "main": "./index",
   "scripts": {
-    "test": "mocha"
+    "test": "make lint test"
   },
   "engine": {
     "node": "*"
@@ -18,8 +18,11 @@
     "carrier": "~0.2.0"
   },
   "devDependencies": {
+    "jshint": "*",
+    "mocha": "~1.13.0",
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.4"
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-cli": "~0.1.9"
   },
   "keywords": [
     "asterisk",
