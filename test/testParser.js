@@ -22,11 +22,10 @@ var rawEvent = [
   'foo: var2'
 ].join('\r\n');
 
-
 describe('AsteriskAmi', function(){
   describe('actionEvent', function(){
     it('should return with one object', function(){
-      assert.deepEqual(parse(rawEvent), {
+      assert.deepEqual(parse.parse(rawEvent), {
         'event': 'Newchannel',
         'privilege': 'call,all',
         'channel': 'SIP/misspiggy-00000001',
@@ -50,6 +49,16 @@ describe('AsteriskAmi', function(){
           1: 'var2'
         }
       });
+    });
+    it('should return with a version of 1.3', function(){
+      var foo = {_version: null};
+      parse.parseVersion.call(foo, 'Asterisk Call Manager/1.3');
+      assert.equal(1.3, foo._version);
+    });
+    it('should return with a version of 1.4', function(){
+      var foo = {_version: null};
+      parse.parseVersion.call(foo, 'Asterisk Call Manager/1.4');
+      assert.equal(1.4, foo._version);
     });
   });
 });
