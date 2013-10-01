@@ -6,9 +6,25 @@ An extremely lightweight Asterisk AMI connector
 
 ## Install
 
+Try out the beta for version 0.2.0 and let us know what you think!
+
+```
+npm install asterisk-ami@0.2.0-beta
+```
+
+Or stick with stable
+
+
 ```
 npm install asterisk-ami
 ```
+
+##Beta
+
+Try out the beta, the docs can be found in the branch beta - [Docs](https://github.com/holidayextras/node-asterisk-ami/tree/beta)
+
+[![Build Status](https://travis-ci.org/holidayextras/node-asterisk-ami.png?branch=beta)](http://travis-ci.org/holidayextras/node-asterisk-ami)
+
 
 ## Usage
 
